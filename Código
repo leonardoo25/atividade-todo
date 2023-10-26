@@ -1,0 +1,60 @@
+tarefas = {
+    "tarefa 1" : "lavar louça",
+    "tarefa 2" : "passear com o cachorro",
+    "tarefa 3" : "fazer compras"
+}
+
+def listartarefa():
+    print(tarefas)
+
+def adicionartarefa():
+    print(tarefas)
+    tarefa = input("Adicione uma Tarefa: ")
+    tarefas[f"tarefa {len(tarefas) + 1}"] = tarefa
+    print(f"A tarefa {tarefa} foi adicionada.")
+    print(tarefas)
+
+def removertarefa():
+    print(tarefas)
+    removertarefa = input("Digite o nome da tarefa que você deseja remover: ")
+    if removertarefa in tarefas:
+        del tarefas[removertarefa]
+        print(f"A {removertarefa} foi removida.")
+        print(tarefas)
+    else:
+        print(f"{removertarefa} não existe.")
+
+def sair_():
+    print("Saindo...")
+
+while True:
+    print("O que deseja? ")
+    print("1- Listar tarefas")
+    print("2- Adicionar tarefa")
+    print("3- Remover tarefa")
+    print("4- Sair")
+    escolha = input("Escolha: ")
+
+    if escolha == "1":
+        listartarefa()
+    
+    elif escolha == "2":
+        adicionartarefa()
+    
+    elif escolha == "3":
+        removertarefa()
+    
+    elif escolha == "4":
+        sair_()
+        break
+            
+    else:
+        print("Essa opção não existe.")
+
+    print("Deseja Sair?")
+    print("1 = Sim")
+    print("2 = Não")
+    sair = input("")
+    if sair == "1":
+        print("Saindo...")
+        break
